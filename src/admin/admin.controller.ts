@@ -12,6 +12,7 @@ export class AdminController {
 
     @Post("/login")
     async loginuser(@Body() userData : Admin){
+        console.log(userData);
         return await this.adminService.LoginUser(userData.email , userData.password);
     }
 
@@ -19,5 +20,5 @@ export class AdminController {
     async createUser(@Body() userData : Admin){
         return await this.adminService.createSignup(userData);
     }
-    
+
 }

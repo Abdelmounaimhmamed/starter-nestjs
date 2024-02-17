@@ -14,6 +14,5 @@ import { AdminService } from "./admin.service";
     exports:  []
 })
 export class AdminModule {
-    
 
 }
