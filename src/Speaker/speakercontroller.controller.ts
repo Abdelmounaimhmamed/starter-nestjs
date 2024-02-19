@@ -14,6 +14,7 @@ export class SpeakerController {
         return await this.speakerService.getAllSpeakers();
     }
 
+
     @Get("getOneSpeaker/:id")
     async getOneSpeaker(@Param("id") id : number){
         return await this.speakerService.getOneSpeaker(id);
@@ -24,8 +25,8 @@ export class SpeakerController {
         return await this.speakerService.createSpeaker(speakerData);
     }   
     @Delete("deleteSpeaker/:id")
-    async updateSpeaker(@Param("id") id : number , @Body() speakerData : any){
-        
+    async deleteSpeaker(@Param("id") id : number , @Body() speakerData : any){
+        return await this.speakerService.deleteSpeaker(id);
     }
     
 
