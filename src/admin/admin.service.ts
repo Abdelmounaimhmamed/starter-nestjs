@@ -38,4 +38,22 @@ export class AdminService {
         return this.adminrepository.save(admin);
     }
 
+    async getMe(id : number) {
+        const isFound = await this.adminrepository.findOne({where : {id}});
+        if(!isFound) {
+            throw new HttpException("no user found !" , HttpStatus.BAD_GATEWAY);
+        }
+        return isFound;
+    }
+
+    async updateMe(id : number , data : string) {
+        const isKhanaFound = await this.adminrepository.findOne({where : {id}});
+        if(!isKhanaFound) {
+            throw new HttpException("no khona  has been found ,", HttpStatus.BAD_REQUEST);
+        }
+        Object.assign(isKhanaFound , data);
+        return  await this.adminrepository.save(isKhanaFound);
+    }
+
 }
+
