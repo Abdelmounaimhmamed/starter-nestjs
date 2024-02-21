@@ -28,6 +28,7 @@ export class MessageController  {
         }),
       }))
     async saveUploadedData(@UploadedFile("file") file , @Body() data : any ){
+        console.log(data);
         console.log(file);
         return await this.messageService.saveFile(file,data);
     }
