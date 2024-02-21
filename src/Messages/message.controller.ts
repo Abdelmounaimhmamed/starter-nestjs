@@ -15,8 +15,7 @@ export class MessageController  {
     constructor(
         private readonly messageService : MessageService
     ){}
-
-
+    
     @Post("register")
     @UseInterceptors(FileInterceptor('file', {
         storage: diskStorage({

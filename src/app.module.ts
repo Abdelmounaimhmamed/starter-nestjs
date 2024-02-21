@@ -23,7 +23,7 @@ import { Message } from './Messages/Message.entiry';
     password: "AVNS_3VihUQQBetJQy_cqL05",
     database: "nestjsShared",
     entities: [Admin,AboutEntity , HeroEntity , SpeakerEntity , Message,Partner , SpeakerEntity],
-    synchronize: true
+    synchronize: false
   })],
   controllers: [AppController],
   providers: [ AppService],
