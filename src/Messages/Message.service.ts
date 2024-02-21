@@ -15,12 +15,17 @@ export class MessageService {
 
     async saveFile(file : Express.Multer.File , data : any){
         const written = this.messagerepo.create({
-            firstName : data.firstName , 
+            firstName : data.firstName ,
             lastName : data.lastName ,
             email : data.email ,
             phone : data.phone ,
             fileName : file.filename , 
-            filePath : file.path
+            filePath : file.path,
+            country : data.country ,
+            etablishment : data.etablishment ,
+            title : data.title , 
+            academic : data.academic ,
+            status : data.status
         });
         console.log(written);
         return this.messagerepo.save(written);
@@ -28,7 +33,7 @@ export class MessageService {
 
 
     async getAllMessages(){
-        return await this.messagerepo.find({});
+        return await this.messagerepo.find();
     }
 
     async deleteMessage(id : number) {

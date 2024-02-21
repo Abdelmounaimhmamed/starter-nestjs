@@ -25,5 +25,20 @@ export class Message {
 
     @Column()
     fileName : string ;
+
+    @Column()
+    country : string ;
     
+    @Column()
+    etablishment : string ;
+
+    @Column()
+    title : string ;
+
+    @Column()
+    academic : string ;
+
+    @Column()
+    status : string ;
+
 }
